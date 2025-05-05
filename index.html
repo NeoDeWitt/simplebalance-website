@@ -10,13 +10,14 @@
 <body>
     <nav>
         <div class="nav_logo"><a href="#">Simple Balance</a></div>
-        <ul class="nav_link">
-            <li class="link"><a href="#">หน้าแรก</a></li>
-            <li class="link"><a href="#">บริการของเรา</a></li>
-            <li class="link"><a href="#">เกี่ยวกับเรา</a></li>
-            <li class="link"><a href="#">ติดต่อเรา</a></li>
-            <li class="link"><a href="#">ปรึกษาทันที</a></li>
-            <li class="link"><a href="#">โทรหาเราเลย</a></li>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav_link" id="nav_link" >
+            <li class="nav_links" ><a href="#">หน้าแรก</a></li>
+            <li class="nav_links"><a href="#">บริการของเรา</a></li>
+            <li class="nav_links"><a href="#">เกี่ยวกับเรา</a></li>
+            <li class="nav_links"><a href="#">ติดต่อเรา</a></li>
+            <li class="link"><a href="https://m.me/simplebalanceaccounting" class="nav_btn hide-on-mobile">ปรึกษาทันที</a></li>
+            <li class="link"><a href="tel:0928535600" aria-label="Call us" class="nav_btn hide-on-mobile">โทรหาเราเลย</a></li>
         </ul>
     </nav>
     <section class="container">
@@ -26,19 +27,16 @@
                 <span class="heading_1">สะดุด</span>
                 <span class="heading_2">เพราะไม่ได้ปิดงบการเงิน</span>
             </h1>
-            <p>
-                เหนื่อยมั้ยกับการทำบัญชีเอง เบื่อมั้ยกับปัญหาเรื่องภาษี จะเปิดหัวต่อไปทำไม ที่ Simple Balance เราให้บริการเหมือนเป็นบัญชีภายในบริษัท ให้คุณได้โทรปรึกษาได้ทุกเมื่อ            </p>
-            <form>
-                <button>
-                    <a href="#"><i class="fa-brands fa-facebook-messenger fa-10x" style="color: #2e7d32;"></i></a>x
-                    <a href="#"><i class="fa-brands fa-line fa-10x" style="color: #2e7d32;"></i></i></a>x
-                    <a href="#"><i class="fa-solid fa-phone fa-10x" style="color: #2e7d32;"></i></i></a>x
-            </button>
-            </form>
+            <p>เหนื่อยมั้ยกับการทำบัญชีเอง เบื่อมั้ยกับปัญหาเรื่องภาษี จะเปิดหัวต่อไปทำไม ที่ Simple Balance เราให้บริการเหมือนเป็นบัญชีภายในบริษัท ให้คุณได้โทรปรึกษาได้ทุกเมื่อ </p>
+            <div class="social-links">
+                <a href="https://m.me/simplebalanceaccounting" target="_blank" rel="noopener noreferrer" aria-label="Chat on Messenger"><i class="fa-brands fa-facebook-messenger fa-3x"></i></a>
+                <a href="https://page.line.me/simplebalance" target="_blank" rel="noopener noreferrer" aria-label="Chat on Line"><i class="fa-brands fa-line fa-3x"></i></a>
+                <a href="tel:0928535600" aria-label="Call us"><i class="fa-solid fa-phone fa-3x"></i></a>
+            </div>
         </div>
         <div class="image_container">
-            <img src="img1.jpg" alt="">
-            <img src="img2.jpg" alt="">
+            <img src="img1.jpg" alt="บริการปิดงบการเงินทั่วประเทศ">
+            <img src="img2.jpg" alt="บริการทำบัญชีทั่วประเทศ">
             <div class="img_content">
                 <ul>
                     <li>ปิดงบ หจก.เริ่มต้น 6,999 บาท</li>
@@ -47,6 +45,13 @@
             </div>
         </div>
     </section>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav_link");
     
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      </script>
 </body>
 </html>
