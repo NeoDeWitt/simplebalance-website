@@ -65,6 +65,7 @@ nav{
     color: var(--primary-color-dark);
 }
 
+
 .link .nav_btn{
     padding: 0.5rem 2rem;
     color: var(--white);
@@ -256,5 +257,9 @@ nav{
 
   .hide-on-mobile{
     display: none;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
