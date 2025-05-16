@@ -194,6 +194,83 @@ nav{
     margin-bottom: 0.5rem;
 }
 
+.services p {
+    font-size: 1rem; /* Standard text size */
+    color: var(--text-color); /* Dark text */
+    margin: 0 0 1rem; /* Space below paragraph */
+}
+
+/*service page*/
+.service_container {
+    max-width: 1200px; /* Increase max-width to make the container wider */
+    margin: 0 auto;
+    padding: 40px 20px; /* Adjust padding for better spacing */
+}
+
+.services_head  {
+    font-size: 2rem; /* Large font for heading */
+    color: var(--primary-color); /* Green color from root */
+    display: flex; /* Flexbox for centering text */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    padding: 1rem; /* Add padding for appearance */
+    width: 100%; /* Full width for centering */
+    text-align: center; /* Fallback for text alignment */
+    margin-bottom: 2rem; /* Space below heading */
+}
+
+.services_head h2 {
+    margin: 0; /* Remove default margin for precise centering */
+    font-size: inherit; /* Inherit font-size from parent */
+    color: var(--primary-color)
+}
+
+.services_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces 4 columns in a single row */
+    gap: 24px; /* Reduced gap for better fit */
+    justify-content: center;
+}
+
+.services {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 20px; /* Add padding inside cards */
+    text-align: center;
+    max-width: 350px; /* Set a max-width for each card to make them larger */
+    margin: 0 auto; /* Center the cards */
+}
+
+.services h2 {
+    font-size: 1.5rem; /* Slightly larger font for headings */
+    margin: 15px 0;
+}
+
+.services img {
+    width: 100%;
+    height: 200px; /* Increase image height for prominence */
+    object-fit: cover;
+}
+
+.services p {
+    font-size: 1rem;
+    color: #666;
+    padding: 0 10px 20px;
+}
+
+.services h2 a {
+    text-decoration: none; /* Removes the underline */
+    color: var(--primary-color); /* Inherits the color from the parent (h2), removing default hyperlink blue/purple */
+}
+
+.services h2 a:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+    color: var(--primary-color-dark); /* Maintains consistent color on hover, or set a custom color if desired */
+}
+
 @media(width < 900px){
     .link a:not(.nav_btn) {
         display: none;
