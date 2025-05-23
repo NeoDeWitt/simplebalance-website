@@ -365,6 +365,70 @@ nav {
     transform: scale(1.2);
 }
 
+
+content.top_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.content_top_wrapper_img {
+    width: 100%;
+}
+
+.content_top_wrapper_img img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.top_wrapper_content {
+    width: 100%;
+    padding: 20px;
+}
+
+.article_main_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article_main_content img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.article_main_content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.article_main_content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.custom-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.custom-link:hover {
+    color: var(--primary-color-dark);
+    transform: scale(1.05);
+}
+
 /* Responsive Design */
 
 /* Laptop (1024px and above) */
