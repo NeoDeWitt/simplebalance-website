@@ -9,7 +9,7 @@
     --secondary-color: #f9fafe; /* Background color */
     --text-color: #333333; /* Default text color */
     --white: #ffffff; /* White color for text and backgrounds */
-    --max-width: 1200px; /* Maximum content width */
+    --max-width: 100%; /* Maximum content width */
 }
 
 /* Global Styles */
@@ -261,6 +261,111 @@ nav {
     color: var(--primary-color-dark);
 }
 
+/* Achievements Section Styles */
+.achievements_container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--primary-color);
+}
+
+.achievements_head {
+    font-size: 2rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.achievements_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-content: center;
+}
+
+.achievement {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.stat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.achievement h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: 0;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.stat-highlight {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F4C430; /* Yellow highlight for prominence */
+}
+
+/* Customers Section Styles */
+.customers_container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--secondary-color);
+}
+
+.customers_head {
+    font-size: 2rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.customers_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-content: center;
+}
+
+.customer {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.customer img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
 /* Subservice Page Styles */
 .top_wrapper {
     display: flex;
@@ -365,7 +470,6 @@ nav {
     transform: scale(1.2);
 }
 
-
 content.top_wrapper {
     display: flex;
     flex-direction: column;
@@ -465,6 +569,24 @@ content.top_wrapper {
     }
 
     .services {
+        max-width: 350px;
+    }
+
+    .achievements_list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .achievement {
+        max-width: 350px;
+    }
+
+    .customers_list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .customer {
         max-width: 350px;
     }
 
@@ -586,6 +708,40 @@ content.top_wrapper {
         font-size: 0.9rem;
     }
 
+    .achievements_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .achievement {
+        max-width: 300px;
+    }
+
+    .achievement h2 {
+        font-size: 1.3rem;
+    }
+
+    .stat-icon {
+        font-size: 1.8rem;
+    }
+
+    .stat-highlight {
+        font-size: 1.8rem;
+    }
+
+    .customers_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .customer {
+        max-width: 300px;
+    }
+
+    .customer img {
+        max-width: 150px;
+    }
+
     .top_wrapper {
         flex-direction: column;
         align-items: center;
@@ -639,7 +795,7 @@ content.top_wrapper {
         position: absolute;
         top: 15px;
         right: 20px;
-        z-index: 1000;
+        z Spencer: 1000;
     }
 
     .nav_link .link {
@@ -723,6 +879,52 @@ content.top_wrapper {
     .services p {
         font-size: 0.85rem;
         padding: 0 5px 15px;
+    }
+
+    .achievements_head {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .achievements_list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .achievement {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .achievement h2 {
+        font-size: 1.2rem;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-highlight {
+        font-size: 1.5rem;
+    }
+
+    .customers_head {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .customers_list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .customer {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .customer img {
+        max-width: 120px;
     }
 
     .top_wrapper {
