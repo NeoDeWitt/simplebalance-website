@@ -164,19 +164,29 @@ nav {
 .social-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    position: relative;
-    z-index: 2;
+    gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
-
-.social-links i {
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
     color: var(--white);
-    transition: transform 0.3s;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
 }
-
-.social-links a:hover i {
-    transform: scale(1.2);
+.social-btn i {
+    font-size: 1.25rem;
+}
+.social-btn:hover {
+    background-color: var(--primary-color-dark);
+    transform: scale(1.05);
 }
 
 .image_container {
