@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เครื่องคำนวณภาษีมูลค่าเพิ่ม (VAT) ประเทศไทย โดย Simple Balance ช่วยคำนวณ VAT 7% หรือ 0% สำหรับสินค้าและบริการ">
+    <meta name="keywords" content="เครื่องคำนวณ VAT, ภาษีมูลค่าเพิ่ม, สำนักงานบัญชีเชียงใหม่, Simple Balance">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/212d964eb9.js" crossorigin="anonymous"></script>
+    <title>เครื่องคำนวณ VAT | Simple Balance สำนักงานบัญชีเชียงใหม่</title>
+</head>
+<body>
+    <nav>
+        <div class="nav_logo"><a href="/">Simple Balance</a></div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav_link" id="nav_link">
+            <li class="nav_links"><a href="/">หน้าแรก</a></li>
+            <li class="nav_links"><a href="../html/services.html">บริการของเรา</a></li>
+            <li class="nav_links"><a href="../html/articles.html">บทความ</a></li>
+            <li class="nav_links"><a href="../html/contactus.html">ติดต่อเรา</a></li>
+            <li class="link"><a href="https://m.me/simplebalanceaccounting" class="nav_btn hide-on-mobile">ปรึกษา�ฟรีทันที</a></li>
+            <li class="link"><a href="tel:0928535600" aria-label="Call us" class="nav_btn hide-on-mobile">โทรหาเราเลย</a></li>
+        </ul>
+    </nav>
+    <section class="container">
+        <div class="content_container">
+            <h1>เครื่องคำนวณภาษีมูลค่าเพิ่ม (VAT)</h1>
+            <p>คำนวณ VAT 7% หรือ 0% สำหรับสินค้าและบริการในประเทศไทยได้อย่างง่ายดาย</p>
+            <div class="vat-calculator">
+                <div class="calculator-inputs">
+                    <label for="amount">จำนวนเงิน (บาท):</label>
+                    <input type="number" id="amount" placeholder="กรอกจำนวนเงิน" step="0.01" min="0" required>
+                    <label for="vat-rate">อัตราภาษี VAT:</label>
+                    <select id="vat-rate">
+                        <option value="7">7% (อัตราปกติ)</option>
+                        <option value="0">0% (ยกเว้นภาษี)</option>
+                    </select>
+                    <label for="calculation-type">ประเภทการคำนวณ:</label>
+                    <select id="calculation-type">
+                        <option value="add">เพิ่ม VAT (ราคายังไม่รวม VAT)</option>
+                        <option value="remove">ลบ VAT (ราคารวม VAT แล้ว)</option>
+                    </select>
+                    <button id="calculate-btn" class="social-btn">คำนวณ</button>
+                </div>
+                <div class="calculator-results" id="results" style="display: none;">
+                    <h3>ผลลัพธ์:</h3>
+                    <p><strong>ราคายังไม่รวม VAT:</strong> <span id="net-price">0.00</span> บาท</p>
+                    <p><strong>จำนวน VAT:</strong> <span id="vat-amount">0.00</span> บาท</p>
+                    <p><strong>ราคารวม VAT:</strong> <span id="gross-price">0.00</span> บาท</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://m.me/simplebalanceaccounting" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Chat on Messenger">
+                    <i class="fa-brands fa-facebook-messenger"></i>
+                    <span>ปรึกษาฟรีผ่าน Messenger</span>
+                </a>
+                <a href="https://page.line.me/simplebalance" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Chat on Line">
+                    <i class="fa-brands fa-line"></i>
+                    <span>ปรึกษาฟรีผ่าน Line</span>
+                </a>
+                <a href="tel:0928535600" class="social-btn" aria-label="Call us">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>โทรหาเรา</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav_link");
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        // VAT Calculator functionality
+        document.getElementById("calculate-btn").addEventListener("click", () => {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const vatRate = parseFloat(document.getElementById("vat-rate").value);
+            const calcType = document.getElementById("calculation-type").value;
+            let netPrice, vatAmount, grossPrice;
+
+            if (isNaN(amount) || amount < 0) {
+                alert("กรุณากรอกจำนวนเงินที่ถูกต้อง");
+                return;
+            }
+
+            if (calcType === "add") {
+                vatAmount = (amount * vatRate) / 100;
+                netPrice = amount;
+                grossPrice = amount + vatAmount;
+            } else {
+                vatAmount = amount - (amount * (100 / (100 + vatRate)));
+                netPrice = amount - vatAmount;
+                grossPrice = amount;
+            }
+
+            document.getElementById("net-price").textContent = netPrice.toFixed(2);
+            document.getElementById("vat-amount").textContent = vatAmount.toFixed(2);
+            document.getElementById("gross-price").textContent = grossPrice.toFixed(2);
+            document.getElementById("results").style.display = "block";
+        });
+    </script>
+</body>
+</html>
